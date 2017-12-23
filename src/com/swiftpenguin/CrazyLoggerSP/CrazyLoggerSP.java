@@ -17,7 +17,7 @@ public class CrazyLoggerSP extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new Logger(this), this);
         registerConfig();
 
-    }
+    } 
 
     private void registerConfig() {
         saveDefaultConfig();

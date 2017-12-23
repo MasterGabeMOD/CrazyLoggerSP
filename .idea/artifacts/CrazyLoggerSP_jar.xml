@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CrazyLoggerSP:jar">
+    <output-path>$PROJECT_DIR$/../../../../Plugins</output-path>
+    <root id="archive" name="CrazyLoggerSP.jar">
+      <element id="module-output" name="CrazyLoggerSP" />
+    </root>
+  </artifact>
+</component>
