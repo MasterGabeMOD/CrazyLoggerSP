@@ -14,7 +14,6 @@ public class Logger implements Listener {
 
     public Logger(CrazyLoggerSP plugin) {
         this.plugin = plugin;
-
     }
 
     @EventHandler
@@ -31,8 +30,7 @@ public class Logger implements Listener {
                 plugin.getConfig().set("Data." + p + ".total", counter);
                 plugin.getConfig().set("Data." + p + ".info." + counter, dateFormat.format(date) + " " + p + " Crate: " + crate + " Reward: " + prize);
                 plugin.saveConfig();
-
-            } else  if (e.getPlayer().isOp() || e.getPlayer().hasPermission("crazylogger.exempt")) {
+            } else if (e.getPlayer().isOp() || e.getPlayer().hasPermission("crazylogger.exempt")) {
                 return;
             }
                 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -41,7 +39,6 @@ public class Logger implements Listener {
                 plugin.getConfig().set("Data." + p + ".total", counter);
                 plugin.getConfig().set("Data." + p + ".info." + counter, dateFormat.format(date) + " " + p + " Crate: " + crate + " Reward: " + prize);
                 plugin.saveConfig();
-
         }
 }
 
