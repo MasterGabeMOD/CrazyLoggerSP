@@ -20,7 +20,6 @@ public class CrazyLoggerSP extends JavaPlugin implements Listener {
 
     private void registerConfig() {
         saveDefaultConfig();
-
     }
 
     @Override
