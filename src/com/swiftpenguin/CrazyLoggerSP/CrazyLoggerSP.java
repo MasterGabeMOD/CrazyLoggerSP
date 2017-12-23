@@ -16,8 +16,9 @@ public class CrazyLoggerSP extends JavaPlugin implements Listener {
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
         getServer().getPluginManager().registerEvents(new Logger(this), this);
         registerConfig();
-
     }
+
+    //kraken test
 
     private void registerConfig() {
         saveDefaultConfig();
