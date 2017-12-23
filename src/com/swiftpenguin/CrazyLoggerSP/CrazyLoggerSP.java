@@ -18,8 +18,6 @@ public class CrazyLoggerSP extends JavaPlugin implements Listener {
         registerConfig();
     }
 
-    //kraken test
-
     private void registerConfig() {
         saveDefaultConfig();
 
@@ -35,6 +33,7 @@ public class CrazyLoggerSP extends JavaPlugin implements Listener {
                     return true;
                 } else if (args[0] != null) {
                     if (!sender.hasPermission("crazylogger.lookup")) {
+                        return true;
                     } else {
                         String p = args[0];
                         if (getConfig().getInt("Data." + p + "." + "total") == 0) {
