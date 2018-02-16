@@ -23,22 +23,25 @@ public class Logger implements Listener {
         String crate = e.getCrateName();
         String prize = e.getPrize().getDisplayItem().getItemMeta().getDisplayName();
 
-        if (!plugin.getConfig().getBoolean("ignore-ops")){
-                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                Date date = new Date();
-                int counter = plugin.getConfig().getInt("Data." + p + ".total") + 1;
-                plugin.getConfig().set("Data." + p + ".total", counter);
-                plugin.getConfig().set("Data." + p + ".info." + counter, dateFormat.format(date) + " " + p + " Crate: " + crate + " Reward: " + prize);
-                plugin.saveConfig();
-            } else if (e.getPlayer().isOp() || e.getPlayer().hasPermission("crazylogger.exempt")) {
-                return;
-            }
-                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                Date date = new Date();
-                int counter = plugin.getConfig().getInt("Data." + p + ".total") + 1;
-                plugin.getConfig().set("Data." + p + ".total", counter);
-                plugin.getConfig().set("Data." + p + ".info." + counter, dateFormat.format(date) + " " + p + " Crate: " + crate + " Reward: " + prize);
-                plugin.saveConfig();
+        if (!plugin.getConfig().getBoolean("ignore-ops")) {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = new Date();
+            int counter = plugin.getConfig().getInt("Data." + p + ".total") + 1;
+            plugin.getConfig().set("Data." + p + ".total", counter);
+            plugin.getConfig().set("Data." + p + ".info." + counter, dateFormat.format(date) + " " + p + " Crate: " + crate + " Reward: " + prize);
+            plugin.saveConfig();
+
+        } else if (e.getPlayer().isOp() || e.getPlayer().hasPermission("crazylogger.exempt")) {
+
+        } else {
+
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = new Date();
+            int counter = plugin.getConfig().getInt("Data." + p + ".total") + 1;
+            plugin.getConfig().set("Data." + p + ".total", counter);
+            plugin.getConfig().set("Data." + p + ".info." + counter, dateFormat.format(date) + " " + p + " Crate: " + crate + " Reward: " + prize);
+            plugin.saveConfig();
         }
+    }
 }
 
